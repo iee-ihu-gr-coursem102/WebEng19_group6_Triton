@@ -26,4 +26,4 @@ Group6-Γιαννόπουλος Αλέξανδρος- Θεοχάρης Σαου�
 
 
 
-Η εφαρμογή μας είναι διαθέσιμη στο: https://nireas.it.teithe.gr/webeng19g6/?fbclid=IwAR05NpfkRQ89RInCZfin0J3Ca6bFomeWhGAKZRhfGvT9WKhdZklXtsTkBJc
+Η εφαρμογή μας είναι διαθέσιμη στο: https://nireas.it.teithe.gr/webeng19g6/index.html
