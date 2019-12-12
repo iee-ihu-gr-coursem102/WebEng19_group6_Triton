@@ -66,10 +66,7 @@
 	.signup-form .row div:last-child{
 		padding-left: 10px;
 	}    	
-    .signup-form a{
-		color: rgb(255, 255, 255);
-		text-decoration: underline;
-	}
+
     .signup-form a:hover{
 		text-decoration: none;
 	}
