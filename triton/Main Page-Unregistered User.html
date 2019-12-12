@@ -23,30 +23,22 @@
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.min.css" rel="stylesheet">
 
+  <!-- Register Form CSS -->
+  <link href="css/registration.css" rel="stylesheet" type="text/css">
+  
 </head>
 
 <body id="page-top">
-  
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-      <body>
-          <div class="container h-100">
-            <div class="d-flex justify-content-center h-100">
-              <div class="searchbar">
-                <input class="search_input" type="text" name="" placeholder="Search...">
-                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-              </div>
-            </div>
-          </div>
-        </body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+	<a class="navbar-brand js-scroll-trigger" href="#page-top">Triton</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
@@ -57,9 +49,12 @@
             <a class="nav-link js-scroll-trigger" href="#portfolio">Music Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Επικοινωνία</a>
+            <a class="nav-link js-scroll-trigger" href="#register">Εγγραφή</a>
           </li>
         </ul>
+		<ul class="navbar-nav">
+	  <li><a href="">Σύνδεση</a></li>
+      </ul>
       </div>
     </div>
   </nav>
@@ -88,7 +83,7 @@
           <h2 class="text-white mt-0">ΕΝΑ ΟΛΟΚΛΗΡΩΜΕΝΟ API ΓΙΑ ΤΙΣ ΜΟΥΣΙΚΕΣ ΣΟΥ ΑΝΑΓΚΕΣ</h2>
           <hr class="divider light my-4">
           <p class="text-white-50 mb-4">Με ένα απλό REGISTER χωρίς καμία χρέωση είσαι πάντα ενημερωμένος/η για τα τελευταία μουσικά νέα και happenings στην θεσσαλονίκη</p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">ΚΑΝΕ ΤΩΡΑ REGISTER</a>
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#register">ΚΑΝΕ ΤΩΡΑ REGISTER</a>
         </div>
       </div>
     </div>
@@ -219,28 +214,36 @@
   </section>
 
  
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">Eπικοινώνησε μαζί μας και βοήθησε μας να κάνουμε την εφαρμογή καλύτερη για εσένα και την παρέα σου</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">Triton@hotmail.com</a>
-        </div>
-      </div>
-    </div>
+<!-- Register Section -->
+  <section class="page-section" id="register" style="padding-bottom: 0rem;padding-top: 2rem;">
+   <div class="signup-form">
+      <form action="/examples/actions/confirmation.php" method="post">
+      <h2>Register</h2>
+      <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>       
+		  <div class="form-group">
+            <input type="text" class="form-control" name="Όνομα" placeholder="Όνομα" required="required">
+          </div>
+		  <div class="form-group">
+            <input type="text" class="form-control" name="Επώνυμο" placeholder="Επώνυμο" required="required">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Username" required="required">
+        </div>   
+      <div class="form-group">
+              <input type="password" class="form-control" name="Kωδικός" placeholder="Κωδικός" required="required">
+          </div>
+      <div class="form-group">
+              <input type="password" class="form-control" name="confirm_password" placeholder="Επιβεβαίωση Κωδικού" required="required">
+          </div>        
+      <div class="form-group">
+              <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+          </div>
+      </form>
+    <div class="text-center">Έχεις ήδη λογαριασμό <a href="#">Sign in</a></div>
+  </div>
   </section>
 
   <!-- Footer -->
