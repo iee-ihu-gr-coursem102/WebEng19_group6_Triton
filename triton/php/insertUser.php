@@ -7,7 +7,8 @@ $lname =mysqli_real_escape_string($link,$_POST['lname']);
 $email =mysqli_real_escape_string($link,$_POST['email']);
 $uname =mysqli_real_escape_string($link,$_POST['uname']);
 $password =mysqli_real_escape_string($link,$_POST['password']);
-$passwordEncr=md5($password);
+$passwordMD5=md5($password);
+$passwordEncr=hash('sha256',$passwordMD5);
 
 $sql = "INSERT INTO users (first_name, last_name, email,username,password,active) VALUES ('$fname', '$lname', '$email','$uname','$passwordEncr','0')";
 
