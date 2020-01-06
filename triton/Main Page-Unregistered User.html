@@ -15,7 +15,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic'
+    rel='stylesheet' type='text/css'>
 
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -25,16 +26,21 @@
 
   <!-- Register Form CSS -->
   <link href="css/registration.css" rel="stylesheet" type="text/css">
-  
+
+  <!-- Login Form CSS -->
+  <link href="css/login.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body id="page-top">
 
   <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-	<a class="navbar-brand js-scroll-trigger" href="#page-top">Triton</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Triton</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -52,12 +58,50 @@
             <a class="nav-link js-scroll-trigger" href="#register">Εγγραφή</a>
           </li>
         </ul>
-		<ul class="navbar-nav">
-	  <li><a href="">Σύνδεση</a></li>
-      </ul>
+        <ul class="navbar-nav">
+          <li><a href="#myModal" class="trigger-btn" data-toggle="modal" data-target="#myModal">Σύνδεση</a></li>
+        </ul>
       </div>
     </div>
   </nav>
+
+  <!-- Login -->
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+      <div class="login-form" style="pointer-events: auto;">
+        <form action="" method="post" style="margin-bottom: 0px;">
+          <div class="modal-header text-center" style="padding: 0px;">
+            <h2 class="modal-title w-100 font-weight-bold">Sign In</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="username">
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="password">
+          </div>
+          <div class="clearfix">
+            <label><input type="checkbox"> Remember me</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          </div>
+        </form>
+        <p class="text-center small" style="background: #f7f7f7; padding: .75rem 1.25rem; border-top: 1px solid rgba(0,0,0,.125);">Don't have an account! <a href="#register" onclick="$('#myModal').modal('hide')">Sign up here</a>. <br>
+          <a href="#" class="clearfix">Forgot Password?</a>	
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- Masthead -->
   <header class="masthead">
@@ -68,7 +112,8 @@
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Τα τελευταία νέα για τα Music events που τρέχουν τώρα στην πόλη</p>
+          <p class="text-white-75 font-weight-light mb-5">Τα τελευταία νέα για τα Music events που τρέχουν τώρα στην
+            πόλη</p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Μαθε περισσοτερα</a>
         </div>
       </div>
@@ -82,7 +127,8 @@
         <div class="col-lg-8 text-center">
           <h2 class="text-white mt-0">ΕΝΑ ΟΛΟΚΛΗΡΩΜΕΝΟ API ΓΙΑ ΤΙΣ ΜΟΥΣΙΚΕΣ ΣΟΥ ΑΝΑΓΚΕΣ</h2>
           <hr class="divider light my-4">
-          <p class="text-white-50 mb-4">Με ένα απλό REGISTER χωρίς καμία χρέωση είσαι πάντα ενημερωμένος/η για τα τελευταία μουσικά νέα και happenings στην θεσσαλονίκη</p>
+          <p class="text-white-50 mb-4">Με ένα απλό REGISTER χωρίς καμία χρέωση είσαι πάντα ενημερωμένος/η για τα
+            τελευταία μουσικά νέα και happenings στην θεσσαλονίκη</p>
           <a class="btn btn-light btn-xl js-scroll-trigger" href="#register">ΚΑΝΕ ΤΩΡΑ REGISTER</a>
         </div>
       </div>
@@ -106,7 +152,8 @@
           <div class="mt-5">
             <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
             <h3 class="h4 mb-2">Mουσικό Ημερολόγιο</h3>
-            <p class="text-muted mb-0">Ενα calendar που συνεχώς ανανεώνεται και σου προσφέρει τα τελευταία μουσικά νέα</p>
+            <p class="text-muted mb-0">Ενα calendar που συνεχώς ανανεώνεται και σου προσφέρει τα τελευταία μουσικά νέα
+            </p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
@@ -139,7 +186,7 @@
                 Coldplay
               </div>
               <div class="project-name">
-                
+
               </div>
             </div>
           </a>
@@ -152,7 +199,7 @@
                 Red Hot Chili Peppers
               </div>
               <div class="project-name">
-                
+
               </div>
             </div>
           </a>
@@ -162,10 +209,10 @@
             <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-               ACDC
+                ACDC
               </div>
               <div class="project-name">
-                
+
               </div>
             </div>
           </a>
@@ -178,7 +225,7 @@
                 U2
               </div>
               <div class="project-name">
-                
+
               </div>
             </div>
           </a>
@@ -191,7 +238,7 @@
                 Radiohead
               </div>
               <div class="project-name">
-                
+
               </div>
             </div>
           </a>
@@ -204,7 +251,7 @@
                 King Of Leon
               </div>
               <div class="project-name">
-                
+
               </div>
             </div>
           </a>
@@ -213,37 +260,39 @@
     </div>
   </section>
 
- 
-<!-- Register Section -->
+
+  <!-- Register Section -->
   <section class="page-section" id="register" style="padding-bottom: 0rem;padding-top: 2rem;">
-   <div class="signup-form">
+    <div class="signup-form">
       <form action="C:/Users/IT-PC/Documents/GitHub/WebEng19_group6_Triton/triton/php/insertUser.php" method="post">
-      <h2>Register</h2>
-      <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>       
-		  <div class="form-group">
-            <input type="text" class="form-control" name="fname" placeholder="Όνομα" required="required">
-          </div>
-		  <div class="form-group">
-            <input type="text" class="form-control" name="lname" placeholder="Επώνυμο" required="required">
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="uname" placeholder="Όνομα χρήστη" required="required">
-        </div>   
-      <div class="form-group">
-              <input type="password" class="form-control" name="password" placeholder="Κωδικός πρόσβασης" required="required">
-          </div>
-      <div class="form-group">
-              <input type="password" class="form-control" name="confirm_password" placeholder="Επιβεβαίωση κωδικού πρόσβασης" required="required">
-          </div>        
-      <div class="form-group">
-              <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
-          </div>
+        <h2>Register</h2>
+        <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>
+        <div class="form-group">
+          <input type="text" class="form-control" name="fname" placeholder="Όνομα" required="required">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="lname" placeholder="Επώνυμο" required="required">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="uname" placeholder="Όνομα χρήστη" required="required">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Κωδικός πρόσβασης"
+            required="required">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="confirm_password"
+            placeholder="Επιβεβαίωση κωδικού πρόσβασης" required="required">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
       </form>
-    <div class="text-center">Έχεις ήδη λογαριασμό; <a href="#">Sign in</a></div>
-  </div>
+      <div class="text-center">Έχεις ήδη λογαριασμό; <a href="#">Sign in</a></div>
+    </div>
   </section>
 
   <!-- Footer -->
