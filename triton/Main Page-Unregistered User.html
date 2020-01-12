@@ -70,7 +70,7 @@
     <div class="modal-dialog" role="document">
 
       <div class="login-form" style="pointer-events: auto;">
-        <form action="" method="post" style="margin-bottom: 0px;">
+        <form action="/triton/php/login.php" method="post" style="margin-bottom: 0px;">
           <div class="modal-header text-center" style="padding: 0px;">
             <h2 class="modal-title w-100 font-weight-bold">Sign In</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -81,13 +81,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="username">
+            <input type="text" class="form-control" name="lusername" placeholder="username">
           </div>
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input type="password" class="form-control" placeholder="password">
+            <input type="password" class="form-control" name="lpassword" placeholder="password">
           </div>
           <div class="clearfix">
             <label><input type="checkbox"> Remember me</label>
@@ -264,7 +264,7 @@
   <!-- Register Section -->
   <section class="page-section" id="register" style="padding-bottom: 0rem;padding-top: 2rem;">
     <div class="signup-form">
-      <form action="C:/Users/IT-PC/Documents/GitHub/WebEng19_group6_Triton/triton/php/insertUser.php" method="post">
+      <form action="/triton/php/insertUser.php" method="post">
         <h2>Register</h2>
         <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>
         <div class="form-group">
