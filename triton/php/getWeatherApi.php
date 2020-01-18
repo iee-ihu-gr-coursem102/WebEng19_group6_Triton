@@ -4,18 +4,24 @@ $url = 'http://api.openweathermap.org/data/2.5/forecast?q=Thessaloniki&appid=626
 
 $data = file_get_contents($url);
 
-$obj = json_decode($data,true);
+$array = json_decode($data,true);
 
 //$metroAreaId=$obj['resultsPage']['results']['location'][0]['metroArea']['id'];
 //echo $metroAreaId;
 
 //$eventData=json_decode($eventData);
 header('Content-Type: application/json');
-$json_pretty = json_encode(json_decode($data), JSON_PRETTY_PRINT);
+//$json_pretty = json_encode(json_decode($data), JSON_PRETTY_PRINT);
 
-$getDate=$obj['list'][0]['dt'];
+$i=0;
+foreach($array as $value){
+$array['list'][$i]['dt']=date("Y-m-d\TH:i:s\Z");
+$i++;}
 
-echo $json_pretty;
-echo date("Y-m-d\TH:i:s\Z", $getDate);
+$json_pretty_time = json_encode(($array), JSON_PRETTY_PRINT);
+echo $json_pretty_time;
+
+//echo $json_pretty;
+//echo date("Y-m-d\TH:i:s\Z", $getDate);
 //echo $getDate;
 ?>
