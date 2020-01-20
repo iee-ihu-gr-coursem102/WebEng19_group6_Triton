@@ -24,7 +24,10 @@
   <link href="css/creative.min.css" rel="stylesheet">
 
   <!-- JQuery Library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
   <script>
     jQuery(function() {
@@ -42,15 +45,18 @@
           },
           success: function(data) {
             console.log(data);
-            var event_data = '';
-            $.each(data.event, function(index, value) {
-              /*console.log(value);*/
-              event_data += '<tr>';
-              event_data += '<td>' + value.id + '</td>';
-              event_data += '<td>' + value.displayName + '</td>';
-              event_data += '</tr>';
+            // d=$.parseJSON(JSON.stringify(data));
+              
+            //console.log(d);
+            var output;
+            $.each(data,function(i,e) {
+                console.log("2");
+                output += '<tr><td>'+e+''+'</td><td>'+e+'</td></tr>';
+                console.log("1");
             });
-            $("#resulttable").append(event_data);
+            
+              $('#resulttable').append(output);
+            
           }
         });
         return false;
@@ -142,17 +148,10 @@
       </div>
       <div class="row">
         <table id="resulttable">
-          <tr>
-            <th class="id">order</th>
-            <th class="displayName">displayName</th>
-            <th class="start">start</th>
-          </tr>
-          <!-- result look like this -->
-          <tr>
-            <td>test1</td>
-            <td>test2</td>
-            <td>test3</td>
-          </tr>
+            <tbody>
+                
+                
+            </tbody>
         </table>
         <!-- end result-->
 
