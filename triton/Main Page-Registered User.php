@@ -15,62 +15,60 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic'
-    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.min.css" rel="stylesheet">
-    
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    <script>
-        jQuery(function(){
-            $('#search-form').submit(function(){
-            var search = $('#search').val();
-            console.log("1");
+  <!-- JQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <script>
+    jQuery(function() {
+      $('#search-form').submit(function() {
+        var search = $('#search').val();
+        console.log("1");
 
         $.ajax({
-            url : '/triton/php/searchSongApi.php',
-            dataType : 'JSON',
-            type : 'post',
-            data: {
-                //"search": $('#search').val(),
-                search : search,
-            },
-            success: function(data) {
-                console.log(data);
-                var event_data = '';
-                  $.each(data.event, function(index, value){
-                /*console.log(value);*/
-                event_data += '<tr>';
-                event_data += '<td>'+value.id+'</td>';
-                event_data += '<td>'+value.displayName+'</td>';
-                event_data += '</tr>';
+          url: '/triton/php/searchSongApi.php',
+          dataType: 'JSON',
+          type: 'post',
+          data: {
+            //"search": $('#search').val(),
+            search: search,
+          },
+          success: function(data) {
+            console.log(data);
+            var event_data = '';
+            $.each(data.event, function(index, value) {
+              /*console.log(value);*/
+              event_data += '<tr>';
+              event_data += '<td>' + value.id + '</td>';
+              event_data += '<td>' + value.displayName + '</td>';
+              event_data += '</tr>';
             });
             $("#resulttable").append(event_data);
-            }
+          }
         });
         return false;
+      });
     });
-});
-    </script>
-
+  </script>
 
 </head>
 
 <body id="page-top">
 
+  <?php session_start(); ?>
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Triton</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -89,7 +87,7 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Registered Username</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php echo $_SESSION['uname'] ?></a></li>
         </ul>
       </div>
     </div>
@@ -114,57 +112,54 @@
 
   <!-- About Section -->
   <section class="page-section bg-primary" id="about">
-      <form  method="post" id="search-form" action="/triton/php/searchSongApi.php">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">ΒΡΕΣ ΤΑ ΜΟΥΣΙΚΑ EVENTS ΠΟΥ ΣΕ ΕΝΔΙΑΦΕΡΟΥΝ ΜΕ ΕΝΑ ΚΛΙΚ</h2>
-          <hr class="divider light my-4">
-          
-          <a class=!-- Search form -->
-            <div class="md-form mt-0">
-              <input class="form-control" name='search' type="text" placeholder="Search" aria-label="Search" id="search">
-              <input type="submit" class="button" name="search" value="insert" />
-            </div></a>
+    <form method="post" id="search-form" action="/triton/php/searchSongApi.php">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="text-white mt-0">ΒΡΕΣ ΤΑ ΜΟΥΣΙΚΑ EVENTS ΠΟΥ ΣΕ ΕΝΔΙΑΦΕΡΟΥΝ ΜΕ ΕΝΑ ΚΛΙΚ</h2>
+            <hr class="divider light my-4">
+
+            <a class=!-- Search form -->
+              <div class="md-form mt-0">
+                <input class="form-control" name='search' type="text" placeholder="Search" aria-label="Search" id="search">
+                <input type="submit" class="button" name="search" value="insert" />
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-          </form>
+    </form>
   </section>
 
+  <!-- Results Section -->
+  <section class="page-section" id="results">
+    <h2 class="text-center  mt-0"></h2>
 
-<!-- Results Section -->
-<section class="page-section" id="results">
-  <h2 class="text-center  mt-0"></h2>
+    <div class="container">
 
-  <div class="container">
+      <div class="row justify-content-center">
 
-    <div class="row justify-content-center">
-      
-    </div>
-    <div class="row">
+      </div>
+      <div class="row">
         <table id="resulttable">
-    <tr>
-                <th class="id">order</th>
-                <th class="displayName">displayName</th>
-                <th class="start">start</th>
-            </tr>
-            <!-- result look like this -->
-            <tr>
-                <td>test1</td>
-                <td>test2</td>
-                <td>test3</td>
-              </tr>
+          <tr>
+            <th class="id">order</th>
+            <th class="displayName">displayName</th>
+            <th class="start">start</th>
+          </tr>
+          <!-- result look like this -->
+          <tr>
+            <td>test1</td>
+            <td>test2</td>
+            <td>test3</td>
+          </tr>
         </table>
-    <!-- end result-->
-        
+        <!-- end result-->
 
+
+      </div>
     </div>
-  </div>
-</section>
-
-
-
+  </section>
 
   <!-- Services Section -->
   <section class="page-section" id="services">
@@ -249,5 +244,4 @@
   <script src="js/creative.min.js"></script>
 
 </body>
-
 </html>

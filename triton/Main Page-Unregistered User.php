@@ -15,8 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic'
-    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -30,17 +29,19 @@
   <!-- Login Form CSS -->
   <link href="css/login.css" rel="stylesheet" type="text/css">
 
+  <!-- JQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 
 <body id="page-top">
-
+  <?php session_start();
+  ?>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Triton</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -68,36 +69,45 @@
   <!-- Login -->
   <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-
       <div class="login-form" style="pointer-events: auto;">
-        <form action="/triton/php/login.php" method="post" style="margin-bottom: 0px;">
+        <form action="/triton/php/login.php" method="post" id="lognform" onSubmit="return validatelogin();" style="margin-bottom: 0px;">
           <div class="modal-header text-center" style="padding: 0px;">
             <h2 class="modal-title w-100 font-weight-bold">Sign In</h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearmodal()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="input-group form-group">
+            <span class="invalid-feedback" id="userinfo" style="display:inline"></span>
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" name="lusername" placeholder="username">
+            <input type="text" class="form-control" id="lusername" name="lusername" placeholder="username">
           </div>
           <div class="input-group form-group">
+            <span class="invalid-feedback" id="passinfo" style="display:inline"></span>
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input type="password" class="form-control" name="lpassword" placeholder="password">
+            <input type="password" class="form-control" id="lpassword" name="lpassword" placeholder="password">
           </div>
+          <?php
+          if (isset($_SESSION["errorMessage"])) {
+            echo '<script> $(document).ready(function(){ $("#myModal").modal("show"); }); </script>'
+          ?>
+            <div class="invalid-feedback" id="userinfo" style="display:inline"><?php echo $_SESSION["errorMessage"]; ?></div>
+          <?php
+            unset($_SESSION["errorMessage"]);
+          }
+          ?>
           <div class="clearfix">
             <label><input type="checkbox"> Remember me</label>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button id="logbtn" type="submit" class="btn btn-primary btn-block">Log in</button>
           </div>
         </form>
-        <p class="text-center small"
-          style="background: #f7f7f7; padding: .75rem 1.25rem; border-top: 1px solid rgba(0,0,0,.125);">Don't have an
+        <p class="text-center small" style="background: #f7f7f7; padding: .75rem 1.25rem; border-top: 1px solid rgba(0,0,0,.125);">Don't have an
           account! <a href="#register" onclick="$('#myModal').modal('hide')">Sign up here</a>. <br>
           <a href="#" class="clearfix">Forgot Password?</a>
         </p>
@@ -262,39 +272,44 @@
     </div>
   </section>
 
-
   <!-- Register Section -->
   <section class="page-section" id="register" style="padding-bottom: 0rem;padding-top: 2rem;">
     <div class="signup-form">
-      <form action="/triton/php/insertUser.php" method="post">
+      <form action="/triton/php/insertUser.php" method="post" onSubmit="return validateregister();">
         <h2>Register</h2>
         <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>
         <div class="form-group">
-          <input type="text" class="form-control" name="fname" placeholder="Όνομα" required="required">
+          <span class="invalid-feedback" id="regfname" style="display:inline"></span>
+          <input type="text" class="form-control" name="fname" id="fname" placeholder="Όνομα">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="lname" placeholder="Επώνυμο" required="required">
+          <span class="invalid-feedback" id="reglname" style="display:inline"></span>
+          <input type="text" class="form-control" name="lname" id="lname" placeholder="Επώνυμο">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+          <div id="email-availability-status"></div>
+          <span class="invalid-feedback" id="regemail" style="display:inline"></span>
+          <input type="email" class="form-control" name="email" placeholder="Email" id="email" onblur="checkemailAvailability()">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="uname" placeholder="Όνομα χρήστη" required="required">
+          <div id="username-availability-status"></div>
+          <span class="invalid-feedback" id="reguname" style="display:inline"></span>
+          <input type="text" class="form-control" name="uname" placeholder="Όνομα χρήστη" id="uname" onblur="checkusernameAvailability()">
+        </div>
+
+        <div class="form-group">
+          <span class="invalid-feedback" id="regpass" style="display:inline"></span>
+          <input type="password" class="form-control" id="pass" name="password" placeholder="Κωδικός πρόσβασης">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="password" name="password" placeholder="Κωδικός πρόσβασης"
-            required="required">
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" id="confirm_password" name="confirm_password"
-            placeholder="Επιβεβαίωση κωδικού πρόσβασης" required="required">
+          <span class="invalid-feedback" id="regconfpass" style="display:inline"></span>
+          <input type="password" class="form-control" id="confpass" name="confirm_password" placeholder="Επιβεβαίωση κωδικού πρόσβασης">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
         </div>
       </form>
-      <div class="text-center">Έχεις ήδη λογαριασμό; <a href="#myModal" class="trigger-btn" data-toggle="modal"
-          data-target="#myModal">Σύνδεση</a></div>
+      <div class="text-center">Έχεις ήδη λογαριασμό; <a href="#myModal" class="trigger-btn" data-toggle="modal" data-target="#myModal">Σύνδεση</a></div>
     </div>
   </section>
 
@@ -315,9 +330,12 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
-  
+
   <!--Our JavaScript scripts -->
   <script src="js/pass_check.js"></script>
+  <script src="js/validateform.js"></script>
+  <script src="js/clearmodal.js"></script>
+  <script src="js/availability.js"></script>
 
 </body>
 

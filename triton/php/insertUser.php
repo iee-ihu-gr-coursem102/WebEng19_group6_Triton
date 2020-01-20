@@ -1,6 +1,6 @@
 <?php
 include "configuration.php";
-    
+session_start();     
     
 $fname =mysqli_real_escape_string($link,$_POST['fname']);
 $lname =mysqli_real_escape_string($link,$_POST['lname']);
@@ -42,6 +42,6 @@ mail($to, $subject, $message, $headers); // Send our email
 
 // Close connection
 mysqli_close($link);
-
+$_SESSION['uname']=$uname;
 header("Location: http://localhost/triton/Main%20Page-Registered%20User.html");
 ?>

@@ -3,11 +3,6 @@ include "configuration.php";
 
 // Initialize the session
 session_start();
- 
-if ( !isset($_POST['lusername'], $_POST['lpassword']) ) {
-	// Could not get the data that should have been sent.
-	die ('Please fill both the username and password field!');
-}
 
 if ($stmt = $link->prepare('SELECT id, password FROM users WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
@@ -36,11 +31,12 @@ if ($stmt->num_rows > 0) {
 		echo 'Welcome ' . $_SESSION['name'] . '!';
         header("Location: /triton/Main%20Page-Registered%20User.html");
 	} else {
-		echo 'Incorrect password! ';
+		$_SESSION["errorMessage"] = "Λάθος Username ή Password";
+		header("location: /triton/Main%20Page-Unregistered%20User.php");
 	}
 } else {
-	echo 'Incorrect username!';
+	$_SESSION["errorMessage"] = "Λάνθασμένο Username ή Password";
+	header("location: /triton/Main%20Page-Unregistered%20User.php");
 }
-
 	$stmt->close();
 ?>
