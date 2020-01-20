@@ -14,6 +14,8 @@ else {
  echo '<div id="emaildiv" class="valid-feedback" style="display:inline"> Email available.</div>';
  echo '<script>document.getElementById("regemail").innerHTML = "";</script>';
 }}
+elseif (!empty($_POST["email"]) && !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+echo '<div id="emaildiv" class="invalid-feedback" style="display:inline"> Enter proper email.</div>';}
 
 // End code check email
 //Code check user name
@@ -31,5 +33,4 @@ else {
  
 }}
 // End code check username
-
 ?>
