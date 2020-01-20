@@ -29,7 +29,7 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['name'] = $_POST['lusername'];
 		$_SESSION['id'] = $id;
 		echo 'Welcome ' . $_SESSION['name'] . '!';
-        header("Location: /triton/Main%20Page-Registered%20User.html");
+        header("Location: /triton/Main%20Page-Registered%20User.php");
 	} else {
 		$_SESSION["errorMessage"] = "Λάθος Username ή Password";
 		header("location: /triton/Main%20Page-Unregistered%20User.php");

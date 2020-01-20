@@ -43,5 +43,5 @@ mail($to, $subject, $message, $headers); // Send our email
 // Close connection
 mysqli_close($link);
 $_SESSION['uname']=$uname;
-header("Location: http://localhost/triton/Main%20Page-Registered%20User.html");
+header("Location: http://localhost/triton/Main%20Page-Registered%20User.php");
 ?>
