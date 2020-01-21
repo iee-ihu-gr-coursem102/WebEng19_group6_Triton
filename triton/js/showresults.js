@@ -23,7 +23,7 @@ jQuery(function () {
 			        $.each(e.results.event, function (a, b) {
 									 var dateAr = b.start.date.split('-');
 									 var newDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0].slice(-2);
-									output += '<tr><td>' + 'Name:' + b.displayName + '</td><td class="text-nowrap">' + newDate + '</td><td>  <button type="button" class="btn btn-success"><i class="fas fa-heart"></i></button> </td></tr>'; 
+									output += '<tr><td>' + b.displayName + '</td><td class="text-nowrap">' + newDate + '</td><td>  <button type="button" class="btn btn-success"><i class="fas fa-heart"></i></button> </td></tr>'; 
 								 });
 		 });
         $('#tablebody').html(output);
