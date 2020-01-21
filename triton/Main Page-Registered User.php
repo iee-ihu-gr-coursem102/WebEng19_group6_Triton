@@ -54,7 +54,7 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php echo $_SESSION['uname'] ?></a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php if(isset($_SESSION['uname'])) echo $_SESSION['uname']?></a></li>
         </ul>
       </div>
     </div>
@@ -99,21 +99,11 @@
   </section>
 
   <!-- Results Section -->
-  <section class="page-section" id="results">
-    <h2 class="text-center  mt-0"></h2>
-
+  <section class="page-section d-none" id="results">
     <div class="container">
-
-      <div class="row justify-content-center">
-
-      </div>
-      <div class="row">
-        <table id="resulttable">
-          <tbody>
-          </tbody>
+        <table class="table table-hover"id="resulttable">
         </table>
         <!-- end result-->
-      </div>
     </div>
   </section>
 
