@@ -18,13 +18,6 @@ function validatelogin() {
 
 function svalidateregister() {
     var $valid = true;
-    document.getElementById("regfname").innerHTML = "";
-    document.getElementById("reglname").innerHTML = "";
-    document.getElementById("regpass").innerHTML = "";
-    document.getElementById("regconfpass").innerHTML = "";
-    document.getElementById("regemail").innerHTML = "";
-    document.getElementById("reguname").innerHTML = "";
-
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
     var pass = document.getElementById("pass").value;
@@ -59,14 +52,14 @@ function svalidateregister() {
         document.getElementById("reguname").innerHTML = "Συμπλήρωσε Όνομα Χρήστη";
         $valid = false;
     }
-    else if ((document.getElementById("unamediv") !== null) && (document.getElementById("unamediv").className = "invalid-feedback")) {
+    else if ((document.getElementById("unamediv") !== null) && (document.getElementById("unamediv").className == "invalid-feedback")) {
         $valid = false;
     }
     if (email == "") {
         document.getElementById("regemail").innerHTML = "Συμπλήρωσε email";
         $valid = false;
     }
-    else if ((document.getElementById("regemail") !== null) && (document.getElementById("regemail").className = "invalid-feedback")) {
+    else if ((document.getElementById("emaildiv") !== null) && (document.getElementById("emaildiv").className == "invalid-feedback")) {
         $valid = false;
     }
     return $valid;

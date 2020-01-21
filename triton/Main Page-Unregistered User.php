@@ -275,7 +275,7 @@
   <!-- Register Section -->
   <section class="page-section" id="register" style="padding-bottom: 0rem;padding-top: 2rem;">
     <div class="signup-form">
-      <form action="/triton/php/insertUser.php" method="post" onchange="validateregister();" onSubmit="return svalidateregister();">
+      <form action="/triton/php/insertUser.php" method="post" onkeyup="validateregister();" onSubmit="return svalidateregister();">
         <h2>Register</h2>
         <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>
         <div class="form-group">
