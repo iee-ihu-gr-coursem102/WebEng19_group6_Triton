@@ -29,18 +29,21 @@ jQuery(function () {
               var name = b.displayName.split(" ");
               for (var i = 0; i < name.length - 3; i++)
                 newname = newname + name[i] + " ";
-
               output += '<tr><td>' + newname + '</td><td class="text-nowrap">' + newDate + '</td><td>  <button type="button" class="btn btn-success"><i class="fas fa-heart"></i></button> </td></tr>';
             }
             else {
-              var enddateAr = b.end.date.split('-');
-              var newendDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0].slice(-2);
-              output += '<tr><td>' + newname + '</td><td class="text-nowrap"> Start:' + newDate + '<br>End:' + newendDate + '</td><td>  <button type="button" class="btn btn-success"><i class="fas fa-heart"></i></button> </td></tr>';
+              if (b.start.date != b.end.date) {
+                var enddateAr = b.end.date.split('-');
+                var newendDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0].slice(-2);
+                output += '<tr><td>' + newname + '</td><td class="text-nowrap"> Start:' + newDate + '<br>End:' + newendDate + '</td><td>  <button type="button" class="btn btn-success"><i class="fas fa-heart"></i></button> </td></tr>';
+              }
+              else {
+                output += '<tr><td>' + newname + '</td><td class="text-nowrap">' + newDate + '</td><td>  <button type="button" class="btn btn-success"><i class="fas fa-heart"></i></button> </td></tr>';
+              }
             }
           });
         });
         $('#tablebody').html(output);
-
       }
     });
     return false;
