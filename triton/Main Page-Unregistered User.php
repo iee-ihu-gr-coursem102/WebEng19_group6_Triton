@@ -275,7 +275,7 @@
   <!-- Register Section -->
   <section class="page-section" id="register" style="padding-bottom: 0rem;padding-top: 2rem;">
     <div class="signup-form">
-      <form action="/triton/php/insertUser.php" method="post" onSubmit="return validateregister();">
+      <form action="/triton/php/insertUser.php" method="post" onchange="validateregister();" onSubmit="return svalidateregister();">
         <h2>Register</h2>
         <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>
         <div class="form-group">
@@ -332,7 +332,6 @@
   <script src="js/creative.min.js"></script>
 
   <!--Our JavaScript scripts -->
-  <script src="js/pass_check.js"></script>
   <script src="js/validateform.js"></script>
   <script src="js/clearmodal.js"></script>
   <script src="js/availability.js"></script>
