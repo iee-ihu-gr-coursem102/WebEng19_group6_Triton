@@ -24,46 +24,7 @@
   <link href="css/creative.min.css" rel="stylesheet">
 
   <!-- JQuery Library -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-
-  <script>
-    jQuery(function() {
-      $('#search-form').submit(function() {
-        var search = $('#search').val();
-        console.log("1");
-
-        $.ajax({
-          url: '/triton/php/searchSongApi.php',
-          dataType: 'JSON',
-          type: 'post',
-          data: {
-            //"search": $('#search').val(),
-            search: search,
-          },
-          success: function(data) {
-            console.log(data);
-            // d=$.parseJSON(JSON.stringify(data));
-              
-            //console.log(d);
-            var output;
-            $.each(data,function(i,e) {
-                console.log("2");
-                output += '<tr><td>'+e+''+'</td><td>'+e+'</td></tr>';
-                console.log("1");
-            });
-            
-              $('#resulttable').append(output);
-            
-          }
-        });
-        return false;
-      });
-    });
-  </script>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
 
 <body id="page-top">
@@ -148,14 +109,10 @@
       </div>
       <div class="row">
         <table id="resulttable">
-            <tbody>
-                
-                
-            </tbody>
+          <tbody>
+          </tbody>
         </table>
         <!-- end result-->
-
-
       </div>
     </div>
   </section>
@@ -242,5 +199,9 @@
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
 
+  <!--Our JavaScript scripts -->
+  <script src="js/showresults.js"></script>
+
 </body>
+
 </html>
