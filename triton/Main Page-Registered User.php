@@ -54,7 +54,7 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name'];} else { header("location: /triton/Main%20Page-Unregistered%20User.php");   }?></a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php if(isset($_SESSION['name'])) { echo '<i class="fas fa-user-circle"></i> ' . $_SESSION['name'];} else { header("location: /triton/Main%20Page-Unregistered%20User.php"); }?></a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="document.location.href='/triton/php/logout.php'" href="#logout">Logout</a></li>
         </ul>
       </div>
