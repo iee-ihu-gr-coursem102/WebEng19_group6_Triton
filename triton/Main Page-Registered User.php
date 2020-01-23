@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Creative - Start Bootstrap Theme</title>
+  <title>Triton Team</title>
 
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,9 +42,6 @@
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Υπηρεσίες</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#profile">Λογαριασμός</a>
@@ -189,44 +186,7 @@
     </div><!--/row-->
 </div>      
 
-  <!-- Services Section -->
-  <section class="page-section" id="services">
-    <div class="container">
-      <h2 class="text-center mt-0">Υπηρεσίες</h2>
-      <hr class="divider my-4">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Εύχρηστη Εφαρμογή</h3>
-            <p class="text-muted mb-0">Μια εφαρμογή εύκολη στην χρήση για όλες τις ηλικίες</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Mουσικό Ημερολόγιο</h3>
-            <p class="text-muted mb-0">Ενα calendar που συνεχώς ανανεώνεται και σου προσφέρει τα τελευταία μουσικά νέα
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Kαιρός</h3>
-            <p class="text-muted mb-0">Δυνατότητα για ενημέρωση καιρού εφόσον πρόκειται για outdoor event</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Favorite</h3>
-            <p class="text-muted mb-0">Εξατομικευμένα νέα με βάση τους αγαπημένους σου καλλιτέχνες/bands</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Contact Section -->
   <section class="page-section" id="contact">

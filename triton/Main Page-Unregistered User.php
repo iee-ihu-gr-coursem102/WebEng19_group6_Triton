@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Creative - Start Bootstrap Theme</title>
+  <title>Triton Team</title>
 
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -163,8 +163,8 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Mουσικό Ημερολόγιο</h3>
-            <p class="text-muted mb-0">Ενα calendar που συνεχώς ανανεώνεται και σου προσφέρει τα τελευταία μουσικά νέα
+            <h3 class="h4 mb-2">Aνερχόμενα Events</h3>
+            <p class="text-muted mb-0">Mε κάθε αναζήτηση εμφάνιση ανερχόμενων μουσικών events στην πόλη της Θεσσαλονίκης
             </p>
           </div>
         </div>
