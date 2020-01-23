@@ -1,9 +1,8 @@
-$(document).on("mouseenter", "#fav", function(e) {
+$(document).on("click", "#fav", function() {
+	if ($(this).find("i").hasClass("far fa-heart")){ 
     $(this).find("i").removeClass();
-	$(this).find("i").addClass("fas fa-heart");
-});
-
-$(document).on("mouseleave", "#fav", function(e) {
-    $(this).find("i").removeClass();
-	$(this).find("i").addClass("far fa-heart");
+	$(this).find("i").addClass("fas fa-heart");}
+	else { 
+	$(this).find("i").removeClass();
+	$(this).find("i").addClass("far fa-heart"); }
 });

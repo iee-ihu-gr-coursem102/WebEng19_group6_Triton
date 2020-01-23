@@ -47,7 +47,7 @@
             <a class="nav-link js-scroll-trigger" href="#services">Υπηρεσίες</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#">Λογαριασμός</a>
+            <a class="nav-link js-scroll-trigger" href="#profile">Λογαριασμός</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -107,6 +107,88 @@
         <!-- end result-->
     </div>
   </section>
+  
+<!-- User Profile Section -->
+<section class="page-section" id="profile">
+    <div class="container bootstrap snippet">
+      <h2 class="text-center mt-0">Λογαριασμός</h2>
+      <hr class="divider my-4">
+	  
+    <div class="row">
+  		<div class="col-lg-3 col-md-6"><h1><?php if(isset($_SESSION['uname'])) echo $_SESSION['uname']?></h1></div>
+     </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+              
+
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div><br>
+        
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+            <ul class="nav nav-tabs" style="margin-bottom:10px">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#account">Στοιχεία λογαριασμού</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#favorites">Αγαπημένα events</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#password">Αλλαγή κωδικού</a></li>
+              </ul>
+
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="account">
+                  <form class="form" action="#" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Όνομα</h4></label>
+                              <input type="text" disabled="disabled" class="form-control" name="first_name" id="first_name" placeholder='<?php echo $_SESSION['fname'] ?>'>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Επώνυμο</h4></label>
+                              <input type="text" disabled="disabled" class="form-control" name="last_name" id="last_name" placeholder='<?php echo $_SESSION['lname'] ?>'>
+                          </div>
+                      </div>      
+                      <div class="form-group">                       
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" disabled="disabled" class="form-control" name="email" id="email" placeholder='<?php echo $_SESSION['email'] ?>'>
+                          </div>
+                      </div>	
+              	</form>
+             </div><!--/tab-pane-->
+			 
+             <div class="tab-pane" id="favorites">
+                      <div class="form-group">
+                           <div class="col-xs-12">
+        <table class="table table-hover"id="resulttable2">
+		<?php include_once("./php/showfavorites.php");?>
+        </table>
+                            </div>
+                      </div>			   
+             </div><!--/tab-pane-->
+ 
+             <div class="tab-pane" id="password">
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Πατήστε το κουμπί για αλλαγή κωδικόυ</h4></label>                                 <br>
+                              <label for="email"><p>Θα σας έρθει ενα email με οδηγίες για την αλλαγή κωδικού</p></label>
+                          </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                               	<h3></h3><button class="btn btn-lg btn-success" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset Password</button>
+                            </div>
+                      </div>			   
+             </div><!--/tab-pane-->
+               
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+		</div>
+    </div><!--/row-->
+</div>      
 
   <!-- Services Section -->
   <section class="page-section" id="services">
@@ -193,6 +275,7 @@
   <!--Our JavaScript scripts -->
   <script src="js/showresults.js"></script>
   <script src="js/favorite-toggle.js"></script>
+  <script src="js/addfavorite.js"></script>
 </body>
 
 </html>
