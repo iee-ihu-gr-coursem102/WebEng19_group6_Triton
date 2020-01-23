@@ -1,6 +1,6 @@
 jQuery(function () {
   $('#search-form').submit(function (e) {
-    var search = $('#search').val();
+    var search = 'thessaloniki';
     console.log("1");
 $.ajax({
       url: '/triton/php/searchSongApi.php',

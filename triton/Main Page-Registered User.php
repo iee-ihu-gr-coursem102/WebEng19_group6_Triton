@@ -89,8 +89,7 @@
 
             <a class=!-- Search form -->
               <div class="md-form mt-0">
-                <input class="form-control" name='search' type="text" placeholder="Search" aria-label="Search" id="search">
-                <input type="submit" class="button" name="search" value="insert" />
+				<input type="submit" class="btn btn-success btn-xl js-scroll-trigger" value="ΚΛΙΚ">
               </div>
             </a>
           </div>
