@@ -1,7 +1,7 @@
 <?php
 
-//$search =$_POST['search'];
-$url="http://api.openweathermap.org/data/2.5/forecast/?q=thessaloniki&appid=626ed06dc10b472392723ab792c57307";
+$search =$_POST['w'];
+$url='http://api.openweathermap.org/data/2.5/forecast/?q='.$search.'&appid=626ed06dc10b472392723ab792c57307&units=metric';
 $json=file_get_contents($url);
 $data=json_decode($json,true);
 $data['city']['name'];
