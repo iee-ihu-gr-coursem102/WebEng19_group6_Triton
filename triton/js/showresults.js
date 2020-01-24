@@ -3,7 +3,7 @@ jQuery(function () {
     var search = 'thessaloniki';
     console.log("1");
 $.ajax({
-      url: '/triton/php/searchSongApi.php',
+      url: './php/searchSongApi.php',
       dataType: 'JSON',
       type: 'post',
       data: {
@@ -32,7 +32,7 @@ $.ajax({
             var newDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0].slice(-2);			
 			isfavorite = $.ajax({
 					type: 'post',
-					url: '/triton/php/checkfavorites.php', 
+					url: './php/checkfavorites.php', 
 					data: {id: id},
 					async: false,
 					success: function () {	
@@ -40,7 +40,7 @@ $.ajax({
 }).responseText;
 isfavorite = $.trim(isfavorite);
 
-weather = $.ajax({ url: '/triton/php/getWeatherApi.php',
+weather = $.ajax({ url: './php/getWeatherApi.php',
          data: { search:search, startdate:newDate , starttime:starttime},
 		 async: false,
          type: 'post',

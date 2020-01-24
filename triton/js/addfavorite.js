@@ -8,7 +8,7 @@ jQuery(function () {
 	var myclass = $(ele).find("i").attr('class');
     $.ajax({
 	  type: 'POST',
-      url: '/triton/php/favorites.php', 
+      url: './php/favorites.php', 
       data:{myclass:myclass , id:id, text:text, date:date},
       success: function (data) {
 	  }

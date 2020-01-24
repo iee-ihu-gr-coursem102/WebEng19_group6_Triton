@@ -1,6 +1,6 @@
 <?php
 include "configuration.php";
-if ($stmt = $link->prepare('select eve_name, eve_date from event where id in (select eid from UserFavEvent where uname = ?)')) {
+if ($stmt = $link->prepare('select eve_name, eve_date from event where id in (select eid from UserFavEvent where username = ?)')) {
 	$stmt->bind_param('s', $_SESSION['uname']);
 	$stmt->execute();
 	$stmt->store_result();	
