@@ -86,7 +86,7 @@
 
             <a class=!-- Search form -->
               <div class="md-form mt-0">
-				<input type="submit" class="btn btn-success btn-xl js-scroll-trigger" value="ΚΛΙΚ">
+				<input type="submit" class="btn btn-success btn-xl js-scroll-trigger" value="CLICK">
               </div>
             </a>
           </div>
