@@ -168,8 +168,7 @@
  
              <div class="tab-pane" id="password">
                           <div class="col-xs-6">
-                              <label for="email"><h4>Πατήστε το κουμπί για αλλαγή κωδικόυ</h4></label>                                 <br>
-                              <label for="email"><p>Θα σας έρθει ενα email με οδηγίες για την αλλαγή κωδικού</p></label>
+                              <label><h4>Επικοινωνήστε με τους διαχειριστές για την αλλαγή του κωδικού</h4></label> <br>
                           </div>
                       <div class="form-group">
                            <div class="col-xs-12">

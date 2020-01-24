@@ -6,7 +6,7 @@ session_start();
   $user = $_SESSION['uname'];
   $id = $_POST['id'];
   
-if ($stmt = $link->prepare('SELECT * FROM favs WHERE uname = ? AND eid = ? ')) {
+if ($stmt = $link->prepare('SELECT * FROM UserFavEvent WHERE uname = ? AND eid = ? ')) {
 	 
 	$stmt->bind_param('si', $user , $id);
 	$stmt->execute();

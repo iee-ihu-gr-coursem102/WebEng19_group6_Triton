@@ -46,5 +46,5 @@ $_SESSION['uname']=$uname;
 $_SESSION['fname']=$fname;
 $_SESSION['lname']=$lname;
 $_SESSION['email']=$email;
-header("Location: http://localhost/triton/Main%20Page-Registered%20User.php");
+header("Location: /webeng19g6/Main%20Page-Registered%20User.php");
 ?>
