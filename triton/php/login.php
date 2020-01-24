@@ -32,14 +32,14 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['lname']=$lname;
 		$_SESSION['email']=$email;
 		echo 'Welcome ' . $_SESSION['name'] . '!';
-        header("Location: /triton/Main%20Page-Registered%20User.php");
+        header("Location: /webeng19g6/Main%20Page-Registered%20User.php");
 	} else {
 		$_SESSION["errorMessage"] = "Λάθος Username ή Password";
-		header("location: /triton/Main%20Page-Unregistered%20User.php");
+		header("location: /webeng19g6/");
 	}
 } else {
 	$_SESSION["errorMessage"] = "Λάνθασμένο Username ή Password";
-	header("location: /triton/Main%20Page-Unregistered%20User.php");
+	header("location: /webeng19g6/");
 }
 	$stmt->close();
 ?>

@@ -70,7 +70,7 @@
   <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="login-form" style="pointer-events: auto;">
-        <form action="/triton/php/login.php" method="post" id="lognform" onSubmit="return validatelogin();" style="margin-bottom: 0px;">
+        <form action="./php/login.php" method="post" id="lognform" onSubmit="return validatelogin();" style="margin-bottom: 0px;">
           <div class="modal-header text-center" style="padding: 0px;">
             <h2 class="modal-title w-100 font-weight-bold">Sign In</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearmodal()">
@@ -275,7 +275,7 @@
   <!-- Register Section -->
   <section class="page-section" id="register" style="padding-bottom: 0rem;padding-top: 2rem;">
     <div class="signup-form">
-      <form action="/triton/php/insertUser.php" method="post" onkeyup="validateregister();" onSubmit="return svalidateregister();">
+      <form action="./php/insertUser.php" method="post" onkeyup="validateregister();" onSubmit="return svalidateregister();">
         <h2>Register</h2>
         <p class="hint-text">Δημιούργησε τον δικό σου λογαριασμό!</p>
         <div class="form-group">

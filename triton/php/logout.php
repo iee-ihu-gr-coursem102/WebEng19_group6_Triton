@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("location: /triton/Main%20Page-Unregistered%20User.php");
+header("location: /webeng19g6/index.php");
 exit();
 ?>

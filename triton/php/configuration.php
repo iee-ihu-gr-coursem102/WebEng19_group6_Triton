@@ -1,7 +1,7 @@
 <?php
 $dbname = 'webeng19g6';
-$dbuser = 'root';
-$dbpass = '';
+$dbuser = 'webeng19g6';
+$dbpass = '19g6webeng';
 $dbhost = 'localhost:3306';
 
 $link = mysqli_connect($dbhost, $dbuser,$dbpass,$dbname);
@@ -10,7 +10,6 @@ if($link === false){
 }
  
 // Print host information
-echo "Connect Successfully. Host info: " . mysqli_get_host_info($link);
 /* Τα creds απο την Live db στο nirea
 $dbname = 'webeng19g6';
 $dbuser = 'webeng19g6';

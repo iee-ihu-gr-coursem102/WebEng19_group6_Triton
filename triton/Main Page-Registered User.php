@@ -51,8 +51,8 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php if(isset($_SESSION['uname'])) { echo '<i class="fas fa-user-circle"></i> ' . $_SESSION['uname'];} else { header("location: /triton/Main%20Page-Unregistered%20User.php"); }?></a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="document.location.href='/triton/php/logout.php'" href="#logout">Logout</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php if(isset($_SESSION['uname'])) { echo '<i class="fas fa-user-circle"></i> ' . $_SESSION['uname'];} else { header("location: /webeng19g6/"); }?></a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="document.location.href='./php/logout.php'" href="#logout">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -77,7 +77,7 @@
 
   <!-- About Section -->
   <section class="page-section bg-primary" id="about">
-    <form method="post" id="search-form" action="/triton/php/searchSongApi.php">
+    <form method="post" id="search-form" action="./php/searchSongApi.php">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
@@ -132,7 +132,7 @@
               
           <div class="tab-content">
             <div class="tab-pane active" id="account">
-                  <form class="form" action="#" method="post" id="registrationForm">
+                  <form class="form" action="#" method="post">
                       <div class="form-group">
                           
                           <div class="col-xs-6">
