@@ -7,9 +7,9 @@
     display : block;
     position : fixed;
     z-index: 100;
-    background-image : url('http://loadinggif.com/images/image-selection/3.gif');
+    background-image : url('img/giphy.gif');
     background-color:#666;
-    opacity : 0.8;
+    opacity : 0.9;
     background-repeat : no-repeat;
     background-position : center;
     left : 0;
