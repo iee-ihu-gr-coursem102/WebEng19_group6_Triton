@@ -52,6 +52,9 @@
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.min.css" rel="stylesheet">
+  
+  <!-- Loading CSS -->
+  <link href="css/loading.css" rel="stylesheet">
 
   <!-- JQuery Library -->
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
