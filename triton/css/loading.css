@@ -7,7 +7,7 @@
     display : block;
     position : fixed;
     z-index: 100;
-    background-image : url('img/giphy.gif');
+    background-image : url("../img/giphy.gif");
     background-color:#666;
     opacity : 0.9;
     background-repeat : no-repeat;
