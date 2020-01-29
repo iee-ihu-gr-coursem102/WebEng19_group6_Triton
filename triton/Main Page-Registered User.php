@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -16,6 +16,36 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .fa {
+          padding: 20px;
+          font-size: 15px;
+          width: 50px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-facebook {
+          background: #3B5998;
+          color: white;
+        }
+
+        .fa-twitter {
+          background: #55ACEE;
+          color: white;
+        }
+        
+        .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+    </style>
 
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -51,7 +81,7 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#"><?php if(isset($_SESSION['uname'])) { echo '<i class="fas fa-user-circle"></i> ' . $_SESSION['uname'];} else { header("location: /webeng19g6/"); }?></a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#profile"><?php if(isset($_SESSION['uname'])) { echo '<i class="fas fa-user-circle"></i> ' . $_SESSION['uname'];} else { header("location: /webeng19g6/"); }?></a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="document.location.href='./php/logout.php'" href="#logout">Logout</a></li>
         </ul>
       </div>
@@ -91,6 +121,7 @@
             </a>
           </div>
         </div>
+			<div id="divLoading"></div>
       </div>
     </form>
   </section>
@@ -125,7 +156,7 @@
     	<div class="col-sm-9">
             <ul class="nav nav-tabs" style="margin-bottom:10px">
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#account">Στοιχεία λογαριασμού</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#favorites">Αγαπημένα events</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" id="favs" href="#favorites">Αγαπημένα events</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#password">Αλλαγή κωδικού</a></li>
               </ul>
 
@@ -158,9 +189,9 @@
 			 
              <div class="tab-pane" id="favorites">
                       <div class="form-group">
-                           <div class="col-xs-12">
-        <table class="table table-hover"id="resulttable2">
-		<?php include_once("./php/showfavorites.php");?>
+                           <div class="col-xs-12" >
+        <table class="table table-hover"id="showfav">
+
         </table>
                             </div>
                       </div>			   
@@ -173,7 +204,12 @@
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                               	<h3></h3><button class="btn btn-lg btn-success" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset Password</button>
+                               	<h3></h3><button class="btn btn-lg btn-success" type="reset" onclick="alertMsg()"><i class="glyphicon glyphicon-repeat"></i> Reset Password</button>
+                                     <script>
+                                        function alertMsg() {
+                                        alert("Παρακαλώ να επικοινωνήσετε με τον διαχειριστή");
+                                        }   
+                                    </script>
                             </div>
                       </div>			   
              </div><!--/tab-pane-->
@@ -184,7 +220,7 @@
 		</div>
     </div><!--/row-->
 </div>      
-
+  </section>
   
 
   <!-- Contact Section -->
@@ -215,8 +251,11 @@
   <!-- Footer -->
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Powered by Triton Team</div>
-    </div>
+      <div class="small text-center text-muted" align="center">Copyright &copy; 2019 - Powered by Triton Team </br>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+      </div>
   </footer>
 
   <!-- Bootstrap core JavaScript -->
@@ -234,6 +273,7 @@
   <script src="js/showresults.js"></script>
   <script src="js/favorite-toggle.js"></script>
   <script src="js/addfavorite.js"></script>
+    <script src="js/showfavorites.js"></script>
 </body>
 
 </html>
