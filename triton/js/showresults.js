@@ -84,7 +84,7 @@ $.ajax({ url: './php/getWeatherApi.php',
 }}).responseText;
 if (starttime == null) starttime = "Κάποια Ώρα";
 if (temp != "") cel = '&#8451';
-if (weather === "clear sky") {weathercl="fas fa-moon";} else if (weather.includes("rain")) {weathercl="fas fa-cloud-moon-rain"} else if (weather.includes("cloud")) {weathercl="fas fa-cloud-moon"}
+if (weather.includes("clear") || weather.includes("Clear")) {weathercl="fas fa-moon";} else if (weather.includes("rain")) {weathercl="fas fa-cloud-moon-rain"} else if (weather.includes("cloud")) {weathercl="fas fa-cloud-moon"}
 if (isfavorite === "notfav") { isfavorite="far fa-heart"; } else { isfavorite="fas fa-heart";}
             if (b.type == "Concert") {
               var newname = "";

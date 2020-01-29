@@ -10,7 +10,11 @@ jQuery(function () {
 	  type: 'POST',
       url: './php/favorites.php', 
       data:{myclass:myclass , id:id, text:text, date:date},
+	  	    beforeSend: function() {
+   $("div#divLoading").addClass('show');
+  },
       success: function (data) {
+		  		     $("div#divLoading").removeClass('show');
 	  }
     });
     return false;

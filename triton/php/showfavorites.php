@@ -1,6 +1,7 @@
 <?php
 include "configuration.php";
-if ($stmt = $link->prepare('select eve_name, eve_date from event where id in (select eid from UserFavEvent where username = ?)')) {
+session_start();
+if ($stmt = $link->prepare('select eve_name, eve_date from event where id in (select eid from UserFavEvent where username = ?) ORDER BY STR_TO_DATE (eve_date, "%d-%m-%Y") ')) {
 	$stmt->bind_param('s', $_SESSION['uname']);
 	$stmt->execute();
 	$stmt->store_result();	
@@ -18,3 +19,4 @@ echo '<p>Δεν έχεις αγαπημένα ακόμα, κάνε αναζήτ�
 
 }
 ?>
+
