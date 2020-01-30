@@ -141,7 +141,6 @@
         </form>
         <p class="text-center small" style="background: #f7f7f7; padding: .75rem 1.25rem; border-top: 1px solid rgba(0,0,0,.125);">Don't have an
           account! <a href="#register" onclick="$('#myModal').modal('hide')">Sign up here</a>. <br>
-          <a href="#" class="clearfix">Forgot Password?</a>
         </p>
       </div>
     </div>
