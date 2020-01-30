@@ -12,7 +12,7 @@ session_start();
 	mysqli_query($link,"INSERT INTO event (id, eve_name, eve_date) VALUES ('$id', '$text', '$date')");
   }
   else if ($myclass == "far fa-heart"){
-    mysqli_query($link,"DELETE FROM UserFavEvent WHERE uname = '$user' AND eid = '$id'");
+    mysqli_query($link,"DELETE FROM UserFavEvent WHERE username = '$user' AND eid = '$id'");
   }
   
  ?>
